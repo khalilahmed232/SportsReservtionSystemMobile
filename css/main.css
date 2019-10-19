@@ -1,0 +1,77 @@
+
+.main-nav{
+    background-color:#39B387; 
+    min-height: 21vh;
+    text-align: right;
+    font-size: 4.5vh;
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 5px 5px 4px black;
+}
+.main-nav > div{
+    margin-right: 5vh;
+    
+}
+.individual-title{
+    text-align: left;
+    margin-left: 10vw;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+.search-main{
+    font-size: 3.5vh;
+    font-weight: bold;
+    margin-top: 2vh;
+    margin-left: 2vh;
+}
+.all-sports{
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 5vh;
+}
+.sport {
+    height: 31vh;
+    width: 38vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-top: 10vw;
+    border-radius: 2vw;
+    font-size: 3.8vh;
+    color: white;
+    font-weight: bold;
+    word-wrap: break-word;
+    padding: 2vh;
+    
+    background-color: #3C8868;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; 
+
+    -webkit-box-shadow: 19px 22px 40px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 19px 22px 40px 0px rgba(0,0,0,0.75);
+    box-shadow: 19px 22px 40px 0px rgba(0,0,0,0.75);
+    text-shadow: 5px 5px 4px black;
+}
+
+.sport:active,
+.details:active,
+.time-range:active,
+.filter-button:active,
+.hour:active,
+.slot:active,
+.single-date:active,
+.button:active
+{
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    
+}
+
+.search-box-div{
+    font-weight: bold;
+    -webkit-box-shadow: 4px 7px 5px -2px rgba(0,0,0,0.46);
+    -moz-box-shadow: 4px 7px 5px -2px rgba(0,0,0,0.46);
+    box-shadow: 4px 7px 5px -2px rgba(0,0,0,0.46);
+}
+

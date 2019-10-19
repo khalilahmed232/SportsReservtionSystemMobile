@@ -1,0 +1,115 @@
+.available-dates {
+    margin-top: 5vh;
+    display: flex;
+}
+.single-date{
+    background-color:#DC8288 ;
+    width: 20vw;
+    margin: 2vw;
+    color: #ffffff;
+    text-align: center;
+    font-size: 5vw;
+    -webkit-box-shadow: 4px 7px 5px -2px rgba(0,0,0,0.46);
+    -moz-box-shadow: 4px 7px 5px -2px rgba(0,0,0,0.46);
+    box-shadow: 4px 7px 5px -2px rgba(0,0,0,0.46);
+}
+.single-date > .day {
+    font-size: 10vw;
+    font-weight: bold;
+}
+.single-date > .year {
+    display: none;
+}
+.before-today {
+   display: none;
+}
+.selected-date{
+    background-color:#E35059 ;
+}
+
+.time-range{
+    display: inline-block;
+    font-size: 6vw;
+    font-weight: bold;
+    margin-left: 5vw;
+    border-radius: 5vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    color: #E35059;
+    -webkit-box-shadow: 4px 7px 5px -2px rgba(0,0,0,0.46);
+    -moz-box-shadow: 4px 7px 5px -2px rgba(0,0,0,0.46);
+    box-shadow: 4px 7px 5px -2px rgba(0,0,0,0.46);
+}
+
+.time-range:active{
+    background-color: #F5AA88;
+}
+.all-time-ranges{
+    margin-top: 5vh;
+}
+.selected{
+background-color: #F5AA88;
+}
+
+.all-slots{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5vh;
+}
+.slot {
+    text-align: center;
+    background-color: #F5AA88;
+    width: 46vw;
+    padding: 2vw;
+    margin: 2vw;
+    border-radius: 2vw;
+    color: #ffffff;
+    font-weight: bold;
+    -webkit-box-shadow: 4px 7px 5px -2px rgba(0,0,0,0.46);
+    -moz-box-shadow: 4px 7px 5px -2px rgba(0,0,0,0.46);
+    box-shadow: 4px 7px 5px -2px rgba(0,0,0,0.46);
+    }
+.slot.available{
+    background-color: #39B387;
+}
+.filter{
+    color: #E35059;
+    font-size: 6vw;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 4vh;
+}
+.filter-button{
+    display: inline-block;
+    width: 15vw;
+    margin: 2vw;
+    background-color: #E35059;
+    color: white;
+    font-size: 8vw;
+    text-align: center;
+    font-weight: bold;
+    -webkit-box-shadow: 4px 7px 5px -2px rgba(0,0,0,0.46);
+    -moz-box-shadow: 4px 7px 5px -2px rgba(0,0,0,0.46);
+    box-shadow: 4px 7px 5px -2px rgba(0,0,0,0.46);
+    border-radius: 2vh;
+
+}
+.filter-all-hours{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.hour{
+    width: 15vw;
+    margin: 2vw;
+    background-color: #3C8868;
+    color: white;
+    font-size: 8vw;
+    text-align: center;
+    font-weight: bold;
+    -webkit-box-shadow: 4px 7px 5px -2px rgba(0,0,0,0.46);
+    -moz-box-shadow: 4px 7px 5px -2px rgba(0,0,0,0.46);
+    box-shadow: 4px 7px 5px -2px rgba(0,0,0,0.46);
+    border-radius: 2vh;
+
+}
