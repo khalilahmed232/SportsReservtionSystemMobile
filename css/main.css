@@ -47,9 +47,9 @@
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; 
 
-    -webkit-box-shadow: 19px 22px 40px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 19px 22px 40px 0px rgba(0,0,0,0.75);
-    box-shadow: 19px 22px 40px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 19px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 19px 3px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 19px 3px rgba(0,0,0,0.75);
     text-shadow: 5px 5px 4px black;
 }
 
