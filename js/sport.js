@@ -1,8 +1,10 @@
 var Sport = {
     name: 'No Sport Selected',
     id: '0',
+    img: '',
     updateTitle: function () {
         $('title').text(this.name + ' - Sports Reservation Centre');
+        $(".main-nav").css("background-image", `url(../${this.img})`);
     },
     updateNav: function () {
         $('.main-nav>div').text(this.name);
@@ -12,10 +14,10 @@ var Sport = {
         sport = SportsReserv.sports.find(x => x.id == this.id);
         this.id = sport.id;
         this.name = sport.name;
+        this.img = sport.img;
     },
     findStadia: function () {
         this.stadia = SportsReserv.stadia.filter(x => x.sports.includes(this.id));
-        console.log(this.stadia);
     },
     addStadia: function () {
         this.stadia.forEach(val => {

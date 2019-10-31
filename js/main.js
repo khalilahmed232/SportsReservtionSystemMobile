@@ -26,15 +26,7 @@ var SportsReserv = {
             img: 'img/randy-fath-G1yhU1Ej-9A-unsplash.jpg'
         }],
     addSports: function () {
-        $(".all-sports").empty();
-        this.sports.forEach(function (val, index) {
-            $(".all-sports").append(`<div class="sport" style="background-image: url('../${val.img}')" data-id='${val.id}'>
-                ${val.name}
-            </div>`);
-        });
-        $('.sport').on('click', function () {
-            window.location = 'sport.html?selectedSport=' + $(this).attr('data-id');
-        });
+        this.updateSportsSearch(this.sports);
     },
     updateSportsSearch: function (sports) {
         $(".all-sports").empty();
@@ -44,7 +36,23 @@ var SportsReserv = {
             </div>`);
         });
         $('.sport').on('click', function () {
-            window.location = 'sport.html?selectedSport=' + $(this).attr('data-id');
+            var scroll = $(window).scrollTop();
+            var position = $(this).position();
+            $($(this)[0].outerHTML).appendTo("body").css({
+                "position": "fixed",
+                "top": position.top - scroll,
+                "left": position.left,
+                "z-index": 2
+            }).addClass("expanded");
+            var id = $(this).attr('data-id');
+            setTimeout(function () {
+                $(".sport.expanded").css({ 'top': '', 'left': '' }).addClass("afterexpanded");
+                $("body").append("<div class='loading-div'><div class='lds-ring'><div></div><div></div><div></div><div></div></div></div>")
+                setTimeout(function () {
+                    $(".sport.afterexpanded").addClass("nextafterexpanded");
+                    window.location = 'sport.html?selectedSport=' + id;
+                }, 1000);
+            }, 1000);
         });
     },
     stadia: [
