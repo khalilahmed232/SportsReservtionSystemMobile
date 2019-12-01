@@ -30,10 +30,8 @@ var Booking = {
                 slot: fromTime.format('HH:mm') + ' - ' + toTime.format('HH:mm'),
                 available: true
             });
-            fromTime.add(15, 'minutes');
+            fromTime.add(60, 'minutes');
         }
-
-
     },
     slotRange: 15,
     updateSlotRange: function (slotRange) {
@@ -52,10 +50,10 @@ var Booking = {
                 <div class="slot">${val.slot}</div>
                 `);
             }
-            if (index % 4 == 3) {
-                $(".all-slots").append(`
-                <hr width='100%'>`);
-            }
+            // if (index % 4 == 3) {
+            //     $(".all-slots").append(`
+            //     <hr width='100%'>`);
+            // }
         });
 
         $(".slot").on("click", function () {
@@ -92,7 +90,7 @@ var Booking = {
             }
             if (missing > 0) {
                 var width = missing * 20;
-                $(".offset-date").css("width", width + "vw");
+                $(".offset-date").css("width", width + "%");
             }
 
             if (index == 2) {

@@ -105,3 +105,6 @@ $().ready(function () {
 
 
 
+function gotoLoginPage() {
+    window.location.href = "login.html";
+}

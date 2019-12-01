@@ -17,3 +17,30 @@ var Checkout = {
 $().ready(function () {
     Checkout.populateCheckoutDetails();
 });
+
+function submitCheckoutDetails() {
+    console.log("hello");
+    var url = 'http://ec2-3-81-53-8.compute-1.amazonaws.com:8080/ProjectTest/registerCourt'
+        + '?courtid=' + Util.GetURLParameter('stadiumId')
+        + '&book_date=' + Util.GetURLParameter('selectedDate')
+        + '&book_time=' + Util.GetURLParameter('selectedSlot')
+        + '&firstName="' + $("#firstName").val() + '"'
+        + '&lastName="' + $("#lastName").val() + '"'
+        + '&emailid="' + $("#email").val() + '"';
+
+    $.ajax({
+        url: url,
+        type: 'get',
+        contentType: 'application/json',
+        success: function (data, textStatus, jQxhr) {
+            console.log(data);
+            console.log("success");
+        },
+        error: function (jqXhr, textStatus, errorThrown) {
+            console.log(errorThrown);
+            console.log("failed");
+            alert("An error occurred while checking out");
+        }
+    });
+    return false;
+}

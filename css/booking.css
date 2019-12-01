@@ -1,20 +1,25 @@
 .available-dates {
+    width: 33%;
     margin-top: 5vh;
     display: flex;
+    margin: 0 auto;
 }
 .single-date{
     background-color:#DC8288 ;
-    width: 20vw;
-    margin: 2vw;
+    width: 20%;
+    margin: 2%;
     color: #ffffff;
     text-align: center;
-    font-size: 5vw;
     -webkit-box-shadow: 4px 7px 5px -2px rgba(0,0,0,0.46);
     -moz-box-shadow: 4px 7px 5px -2px rgba(0,0,0,0.46);
     box-shadow: 4px 7px 5px -2px rgba(0,0,0,0.46);
+
+}
+.single-date:hover{
+    cursor: pointer;
 }
 .single-date > .day {
-    font-size: 10vw;
+    font-size: xx-large;
     font-weight: bold;
 }
 .single-date > .year {
@@ -46,6 +51,7 @@
 }
 .all-time-ranges{
     margin-top: 5vh;
+    display: none;
 }
 .selected{
 background-color: #F5AA88;
@@ -55,37 +61,41 @@ background-color: #F5AA88;
     display: flex;
     flex-wrap: wrap;
     margin-top: 5vh;
+    width: 50%;
+    margin : 0 auto;
 }
 .slot {
+    display: inline-block;
     text-align: center;
     background-color: #F5AA88;
-    width: 46vw;
-    padding: 2vw;
-    margin: 2vw;
-    border-radius: 2vw;
+    width: 20%;
+    padding: 10px;
+    margin: 10px;
+    border-radius:10px;
     color: #ffffff;
     font-weight: bold;
     -webkit-box-shadow: 4px 7px 5px -2px rgba(0,0,0,0.46);
     -moz-box-shadow: 4px 7px 5px -2px rgba(0,0,0,0.46);
     box-shadow: 4px 7px 5px -2px rgba(0,0,0,0.46);
-    }
+}
 .slot.available{
     background-color: #39B387;
 }
 .filter{
     color: #E35059;
-    font-size: 6vw;
     font-weight: bold;
     text-align: center;
     margin-top: 4vh;
+    
 }
 .filter-button{
+    width: 3%;
+    padding: 10px;
+    margin: 10px;
+    border-radius:10px; 
     display: inline-block;
-    width: 15vw;
-    margin: 2vw;
     background-color: #E35059;
     color: white;
-    font-size: 8vw;
     text-align: center;
     font-weight: bold;
     -webkit-box-shadow: 4px 7px 5px -2px rgba(0,0,0,0.46);
@@ -93,18 +103,25 @@ background-color: #F5AA88;
     box-shadow: 4px 7px 5px -2px rgba(0,0,0,0.46);
     border-radius: 2vh;
 
+}
+.filter-button:hover{
+    cursor: pointer;
 }
 .filter-all-hours{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    width: 20%;
+    margin: 0 auto;
+    
 }
 .hour{
-    width: 15vw;
-    margin: 2vw;
+    width: 12%;
+    padding: 10px;
+    margin: 10px;
+    border-radius:10px; 
     background-color: #3C8868;
     color: white;
-    font-size: 8vw;
     text-align: center;
     font-weight: bold;
     -webkit-box-shadow: 4px 7px 5px -2px rgba(0,0,0,0.46);
@@ -112,4 +129,7 @@ background-color: #F5AA88;
     box-shadow: 4px 7px 5px -2px rgba(0,0,0,0.46);
     border-radius: 2vh;
 
+}
+.hour:hover{
+    cursor: pointer;
 }
