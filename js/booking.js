@@ -23,12 +23,13 @@ var Booking = {
         var fromTime = moment(startTime, ['h:m a', 'H:m']);
         var finalEndTime = moment(endTime, ['h:m a', 'H:m']);
         toTime = fromTime.clone().add(this.slotRange, 'minutes');
+        Booking.showDates(moment());
+        var day = $('.selected-date').find(".day").text().trim();
+        var month = $('.selected-date').find(".month").text().trim();
+        var year = $('.selected-date').find(".year").text().trim();
 
-        var day = $('.selected-date').find(".day").text();
-        var month = $('.selected-date').find(".month").text();
-        var year = $('.selected-date').find(".year").text();
-
-        var url = corsproxy + backendUrl + "/DispatcherServlets?court=" + Booking.id + "&date=" + year + "-" + month + "  - " + day;
+        var url = corsproxy + backendUrl + "/DispatcherServlets?court="
+            + Booking.id + "&date=" + year + "-" + moment().month(month).format("M") + "-" + day;
 
         $.ajax({
             url: url,
