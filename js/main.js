@@ -1,4 +1,5 @@
 var corsproxy = "https://cors-anywhere.herokuapp.com/";
+// var corsproxy = ""; // comment above line and uncomment below line if html is deployed on same server and port  
 var backendUrl = "http://ec2-54-210-70-217.compute-1.amazonaws.com:8080/ProjectTest";
 
 var SportsReserv = {
