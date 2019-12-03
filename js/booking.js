@@ -24,14 +24,47 @@ var Booking = {
         var finalEndTime = moment(endTime, ['h:m a', 'H:m']);
         toTime = fromTime.clone().add(this.slotRange, 'minutes');
 
-        while (toTime.isBefore(finalEndTime)) {
-            toTime = fromTime.clone().add(this.slotRange, 'minutes');
-            this.slots.push({
-                slot: fromTime.format('HH:mm') + ' - ' + toTime.format('HH:mm'),
-                available: true
-            });
-            fromTime.add(60, 'minutes');
-        }
+        var day = $('.selected-date').find(".day").text();
+        var month = $('.selected-date').find(".month").text();
+        var year = $('.selected-date').find(".year").text();
+
+        var url = corsproxy + backendUrl + "/DispatcherServlets?court=" + Booking.id + "&date=" + year + "-" + month + "  - " + day;
+
+        $.ajax({
+            url: url,
+            type: 'get',
+            success: function (data, textStatus, jQxhr) {
+                var data2 = JSON.parse(data);
+                console.log(data);
+                console.log(data2);
+                console.log("success");
+                while (toTime.isBefore(finalEndTime)) {
+                    toTime = fromTime.clone().add(Booking.slotRange, 'minutes');
+                    if (isSlotAvailable(fromTime, data2)) {
+                        Booking.slots.push({
+                            slot: fromTime.format('HH:mm') + ' - ' + toTime.format('HH:mm'),
+                            available: true
+                        });
+                    }
+                    else {
+                        Booking.slots.push({
+                            slot: fromTime.format('HH:mm') + ' - ' + toTime.format('HH:mm'),
+                            available: false
+                        });
+                    }
+
+                    fromTime.add(60, 'minutes');
+                }
+                Booking.showAllSlots();
+            },
+            error: function (jqXhr, textStatus, errorThrown) {
+                console.log(errorThrown);
+                console.log("failed");
+                alert("An error occurred while checking out");
+            }
+        });
+
+
     },
     slotRange: 15,
     updateSlotRange: function (slotRange) {
@@ -147,7 +180,7 @@ $().ready(function () {
             $('.hour').off("click");
             $('.filter-all-hours').empty();
             Booking.populateSlots();
-            Booking.showAllSlots();
+
         });
     });
 });
@@ -158,7 +191,6 @@ function timeRangeClickFun() {
     $(this).addClass('selected');
     Booking.updateSlotRange(timeRange);
     Booking.populateSlots();
-    Booking.showAllSlots();
 }
 
 function singleDateClickFun() {
@@ -168,4 +200,14 @@ function singleDateClickFun() {
     var selectedDateStr = day + ':' + month + ':' + year;
     var selectedDate = moment(selectedDateStr, 'DD:MMM:YYYY');
     Booking.showDates(selectedDate);
+}
+
+function isSlotAvailable(toTimeSlot, allBookedSlots) {
+    console.log(toTimeSlot.format('hh:mm:ss A'));
+    for (var i = 0; i < allBookedSlots.length; i++) {
+        if (toTimeSlot.format('hh:mm:ss A') == allBookedSlots[i]) {
+            return false;
+        }
+    }
+    return true;
 }

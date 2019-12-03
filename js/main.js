@@ -1,3 +1,6 @@
+var corsproxy = "https://cors-anywhere.herokuapp.com/";
+var backendUrl = "http://ec2-54-210-70-217.compute-1.amazonaws.com:8080/ProjectTest";
+
 var SportsReserv = {
     sports: [
         {
@@ -61,7 +64,7 @@ var SportsReserv = {
             sports: [2, 5, 6]
         },
         {
-            id: 2,
+            id: 101,
             name: 'Terry Sports Centre',
             addressLine1: '2800  Burnside Avenue',
             city: 'Partoun',

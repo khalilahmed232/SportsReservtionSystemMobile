@@ -20,10 +20,10 @@ $().ready(function () {
 
 function submitCheckoutDetails() {
     console.log("hello");
-    var url = 'http://ec2-3-81-53-8.compute-1.amazonaws.com:8080/ProjectTest/registerCourt'
+    var url = corsproxy + backendUrl + '/RegisterCourt'
         + '?courtid=' + Util.GetURLParameter('stadiumId')
-        + '&book_date=' + Util.GetURLParameter('selectedDate')
-        + '&book_time=' + Util.GetURLParameter('selectedSlot')
+        + '&book_date=' + moment(Util.GetURLParameter('selectedDate'), 'DD-MMM-YYYY').format('YYYY-MM-DD')
+        + '&book_time=' + Util.GetURLParameter('selectedSlot').substring(0, 5) + ':00'
         + '&firstName="' + $("#firstName").val() + '"'
         + '&lastName="' + $("#lastName").val() + '"'
         + '&emailid="' + $("#email").val() + '"';
@@ -31,8 +31,8 @@ function submitCheckoutDetails() {
     $.ajax({
         url: url,
         type: 'get',
-        contentType: 'application/json',
         success: function (data, textStatus, jQxhr) {
+            alert(data);
             console.log(data);
             console.log("success");
         },
